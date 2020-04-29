@@ -40,7 +40,7 @@ Class PostModel{
 
 
 	}
-	public function editPost(){
+	public function editPost($id_post, $title, $description, $status, $image){
 		$connect = mysqli_connect("localhost","root","","oceansoft_test");
 		if(mysqli_connect_errno()){
 			echo "Failed to connect to". mysqli_connect_error();
@@ -49,7 +49,15 @@ Class PostModel{
 		$query = $connect->query($sql);
 		return $query;
 	}
+
+	public function getPostEdit($id_post) {
+		$connect = mysqli_connect("localhost","root","","oceansoft_test");
+		if(mysqli_connect_errno()){
+			echo "Failed to connect to". mysqli_connect_error();
+		}
+		$sql = "SELECT * FROM posts WHERE id_post = '$id_post'";
+		$query = $connect->query($sql);
+		return $query;
+	}
 }
-
-
 ?>

@@ -6,7 +6,7 @@ Class PostView{
 	public function add(){
 		include_once('templates/add_post.php');
 	}
-	public function edit(){
+	public function edit($post){
 		include_once('templates/edit_post.php');
 	}
 }
